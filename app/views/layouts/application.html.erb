@@ -7,9 +7,14 @@
                                'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application',
                                'data-turbolinks-track': 'reload' %>
+    <!-- HTML shimがこの1行で収まる app/views/layouts/_shim.html.erbの内容が実行 -->
+    <%= render 'layouts/shim' %>
   </head>
-
   <body>
-    <%= yield %>
+    <!-- headerの内容がこの1行で収まる app/views/layouts/_header.html.erbの内容が実行 -->
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
